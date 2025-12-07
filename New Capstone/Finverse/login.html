@@ -22,7 +22,7 @@
     <div class="auth-card">
         <h2>Login</h2>
         <p class="auth-subtitle">Access your Finserve dashboard.</p>
-        <form action="#" method="post" class="form">
+        <form id="login-form" action="#" method="post" class="form">
             <label>
                 Email
                 <input type="email" name="email" placeholder="you@example.com" required>
@@ -31,12 +31,13 @@
                 Password
                 <input type="password" name="password" placeholder="••••••••" required>
             </label>
-            <button type="submit" class="btn-primary btn-full">Login</button>
+            <button id="login-btn" type="button" class="btn-primary btn-full">Login</button>
         </form>
         <p class="auth-alt">
             New to Finserve?
             <a href="register.html">Create an account</a>
         </p>
+        <p id="login-message" class="small muted"></p>
     </div>
 </main>
 
@@ -45,5 +46,8 @@
         <p>© 2025 Finserve.</p>
     </div>
 </footer>
+
+<script src="app.js"></script>
 </body>
 </html>
+

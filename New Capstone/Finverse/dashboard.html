@@ -22,16 +22,26 @@
     <div class="container dashboard-layout">
         <section class="dash-left">
             <h2>Welcome, User</h2>
+            <p class="muted">Finserve project</p>
 
             <div class="card">
                 <h3>Linked bank account</h3>
-                <p>Status: <span class="badge badge-warning">Not connected</span></p>
-                <button class="btn-outline btn-small" type="button">Link bank</button>
+                <p>
+                    Status:
+                    <span id="bank-status-text">Not connected</span>
+                    <span id="bank-status-badge" class="badge badge-warning">Not connected</span>
+                </p>
+                <p class="muted small">
+                    *******
+                </p>
+                <button id="link-bank-btn" class="btn-outline btn-small" type="button">
+                    Link bank
+                </button>
             </div>
 
             <div class="card">
                 <h3>Recent transfers</h3>
-                <ul class="transfer-list">
+                <ul id="transfer-list" class="transfer-list">
                     <li>
                         <span>₹10,000 → USD</span>
                         <span class="muted small">Completed</span>
@@ -50,15 +60,15 @@
 
         <section class="dash-right card">
             <h3>Send money</h3>
-            <form action="#" method="post" class="form">
+            <form id="transfer-form" action="#" method="post" class="form">
                 <label>
                     Amount (INR)
-                    <input type="number" name="amount" placeholder="e.g. 10000">
+                    <input id="amount-input" type="number" name="amount" placeholder="e.g. 10000">
                 </label>
 
                 <label>
                     Receiver country
-                    <select name="country">
+                    <select id="country-select" name="country">
                         <option value="">Select country</option>
                         <option value="us">United States (USD)</option>
                         <option value="uk">United Kingdom (GBP)</option>
@@ -68,21 +78,26 @@
 
                 <label>
                     Receiver bank account
-                    <input type="text" name="receiver" placeholder="Receiver account number">
+                    <input id="receiver-input" type="text" name="receiver" placeholder="Receiver account number">
                 </label>
 
                 <div class="summary-box">
                     <h4>Transfer summary</h4>
                     <p class="small">
-                        Converted amount: <strong>≈ $118.50</strong>  
-                        Tax & service fee: <strong>₹250</strong>  
-                        You pay: <strong>₹10,250</strong>
+                        Converted amount:
+                        <strong id="converted-amount">0.00</strong><br>
+                        Tax &amp; service fee:
+                        <strong id="tax-amount">0</strong><br>
+                        You pay:
+                        <strong id="total-amount">0</strong>
                     </p>
                 </div>
 
-                <button type="submit" class="btn-primary btn-full">
+                <button id="transfer-btn" type="button" class="btn-primary btn-full">
                     Confirm transfer
                 </button>
+
+                <p id="transfer-message" class="small muted"></p>
             </form>
         </section>
     </div>
@@ -90,9 +105,13 @@
 
 <footer class="footer">
     <div class="container footer-content">
-        <p>© 2025 Finserve</p>
+        <p>© 2025 Finserve. Dashboard</p>
     </div>
 </footer>
+
+<script src="app.js"></script>
 </body>
 </html>
+
+
 
