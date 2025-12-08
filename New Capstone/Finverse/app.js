@@ -127,7 +127,7 @@ if (
 
         const secondLine = document.createElement("span");
         secondLine.className = "muted small";
-        secondLine.textContent = "To " + receiverValue + " · Demo transfer";
+        secondLine.textContent = "To " + receiverValue + " · Completed";
 
         li.appendChild(firstLine);
         li.appendChild(secondLine);
