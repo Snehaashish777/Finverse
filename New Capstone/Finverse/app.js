@@ -3,20 +3,38 @@ const loginBtn = document.getElementById("login-btn");
 const loginMessage = document.getElementById("login-message");
 
 if (loginBtn && loginMessage) {
+    const loginEmail = document.querySelector('input[name="email"]');
+    const loginPassword = document.querySelector('input[name="password"]');
+
     loginBtn.addEventListener("click", function () {
-        loginMessage.textContent =
-            "Logged in successfully.";
+        if (loginEmail.value === "" || loginPassword.value === "") {
+            loginMessage.textContent = "Please provide all credentials.";
+        } else {
+            loginMessage.textContent = "Logged in successfully.";
+        }
     });
 }
 
-// REGISTER PAGE 
+// REGISTER PAGE
 const registerBtn = document.getElementById("register-btn");
 const registerMessage = document.getElementById("register-message");
 
 if (registerBtn && registerMessage) {
+    const regName = document.querySelector('input[name="name"]');
+    const regEmail = document.querySelector('input[name="email"]');
+    const regPassword = document.querySelector('input[name="password"]');
+
     registerBtn.addEventListener("click", function () {
-        registerMessage.textContent =
-            "Account created. You can now go to Login.";
+        if (
+            regName.value === "" ||
+            regEmail.value === "" ||
+            regPassword.value === ""
+        ) {
+            registerMessage.textContent = "Please fill all the fields.";
+        } else {
+            registerMessage.textContent =
+                "Account created. You can now go to Login.";
+        }
     });
 }
 
